@@ -1,5 +1,3 @@
-// remark-sectionize.d.ts
-
 declare module "remark-sectionize" {
   import { Node } from "unist";
 
