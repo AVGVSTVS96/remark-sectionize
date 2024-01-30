@@ -1,13 +1,13 @@
-declare module "remark-sectionize" {
-  import { Node } from "unist";
-
-  interface Plugin {
-    (): Transformer;
-  }
+declare module 'remark-sectionize' {
+  import { Node } from 'unist';
 
   type Transformer = (tree: Node) => void;
 
-  const remarkSectionize: Plugin;
+  interface Plugin<T = void> {
+    (): Transformer;
+  }
+
+  const remarkSectionize: Plugin<void>;
 
   export default remarkSectionize;
 }
