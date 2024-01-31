@@ -1,13 +1,20 @@
 declare module 'remark-sectionize' {
-  import { Node } from 'unist';
+  import { Root, Node } from 'mdast';
+  import { VFile } from 'vfile';
 
-  type Transformer = (tree: Node) => void;
+  type Transformer = (tree: Root, file?: VFile) => void | Promise<void> | Root;
 
-  interface Plugin<T = void> {
-    (): Transformer;
+  type RemarkPlugin = () => Transformer;
+
+  interface SectionNode extends Node {
+    type: 'section';
+    children: Node[];
+    depth?: number;
+    data?: { hName: string };
   }
 
-  const remarkSectionize: Plugin<void>;
+  declare const remarkSectionize: RemarkPlugin<any[]>;
 
   export default remarkSectionize;
+
 }
