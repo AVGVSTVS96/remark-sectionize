@@ -10,7 +10,8 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "test-ts": "node --experimental-specifier-resolution=node --loader ts-node/esm remark-sectionize-test.ts"
   },
   "keywords": [
     "remark",
