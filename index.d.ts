@@ -4,7 +4,7 @@ declare module 'remark-sectionize' {
 
   type Transformer = (tree: Root) => void | Promise<void> | Root;
 
-  type Plugin<T> = () => Transformer;
+  type Plugin = () => Transformer;
 
   interface SectionNode extends Node {
     type: 'section';
