@@ -1,12 +1,9 @@
-declare module 'remark-sectionize' {
-  import { Root } from 'unist';
+import { Root } from 'mdast';
 
-  type Transformer = (tree: Root) => void | Promise<void> | Root;
+type Transformer = (tree: Root) => void | Promise<void> | Root;
 
-  type Plugin = () => Transformer;
+type Plugin = () => Transformer;
 
-  const remarkSectionize: Plugin;
+declare const remarkSectionize: Plugin;
 
-  export default remarkSectionize;
-
-}
+export default remarkSectionize;
