@@ -1,7 +1,10 @@
 {
     "compilerOptions": {
         "allowJs": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true
     },
     "exclude": ["**/*.js"]
 }
