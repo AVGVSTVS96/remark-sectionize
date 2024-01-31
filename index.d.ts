@@ -1,8 +1,7 @@
 declare module 'remark-sectionize' {
   import { Root, Node } from 'mdast';
-  import { VFile } from 'vfile';
 
-  type Transformer = (tree: Root, file?: VFile) => void | Promise<void> | Root;
+  type Transformer = (tree: Root) => void | Promise<void> | Root;
 
   type RemarkPlugin = () => Transformer;
 
