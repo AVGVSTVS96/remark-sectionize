@@ -5,7 +5,7 @@ declare module 'remark-sectionize' {
 
   type Plugin = () => Transformer;
 
-  interface SectionNode extends Node {
+  export interface SectionNode extends Node {
     type: 'section';
     children: Node[];
     depth?: number;
