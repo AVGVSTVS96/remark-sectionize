@@ -25,8 +25,9 @@
     "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
+    "dedent": "^0.7.0",
     "remark": "^14.0.2",
-    "ts-node": "^10.9.2",
+    "tape": "^5.6.3",
     "unist-builder": "^3.0.1",
     "unist-util-remove-position": "^4.0.2"
   }
