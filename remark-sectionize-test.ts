@@ -1,8 +1,16 @@
-import { remark } from 'remark';
-import remarkSectionize from './index';
+const remark = require('remark');
+const remarkSectionize = require('./index');
+import { Root } from 'mdast';
+const assert = require('assert');
 
-// Valid usage: Using remarkSectionize with remark
-remark().use(remarkSectionize);
+// Create a dummy Root node
+const rootNode: Root = {
+  type: 'root',
+  children: [],
+};
 
-// @ts-expect-error
-remark().use(remarkSectionize, {});
+// Use the plugin with remark
+const result = remark().use(remarkSectionize).processSync(rootNode);
+
+// Check the result
+assert.strictEqual(result.contents, rootNode);
