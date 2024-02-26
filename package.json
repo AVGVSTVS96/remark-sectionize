@@ -1,10 +1,13 @@
 {
-  "name": "remark-sectionize",
+  "name": "@avgvstvs96/remark-sectionize",
   "version": "2.0.0",
   "description": "Wrap content below each heading in a <section> element",
   "main": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/jake-low/remark-sectionize",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avgvstvs96/remark-sectionize.git"
+  },
   "author": "Jake Low <hello@jakelow.com>",
   "license": "MIT",
   "private": false,
