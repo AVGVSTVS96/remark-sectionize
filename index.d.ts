@@ -10,4 +10,4 @@ interface RemarkSectionizePlugin extends Plugin<void[], Root> {
 
 declare const remarkSectionize: RemarkSectionizePlugin;
 
-export = remarkSectionize;
+export default remarkSectionize;
