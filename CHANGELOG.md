@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2024-08-09
+### Changed
+- Converted to TypeScript [PR #2](https://github.com/avgvstvs96/remark-sectionize/pull/2) by @AVGVSTVS96
+- Converted to PNPM [PR #2](https://github.com/avgvstvs96/remark-sectionize/pull/2) by @AVGVSTVS96
+- Add Biome for linting and formatting [PR #2](https://github.com/avgvstvs96/remark-sectionize/pull/2) by @AVGVSTVS96
+- Update package.json [PR #2](https://github.com/avgvstvs96/remark-sectionize/pull/2) by @AVGVSTVS96
+
 ## [2.0.0] - 2023-04-17
 ### Changed
 - Use ESM instead of CommonJS (thanks @Dahmon for the [PR](https://github.com/jake-low/remark-sectionize/pull/12))
