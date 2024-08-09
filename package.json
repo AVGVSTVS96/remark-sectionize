@@ -9,8 +9,11 @@
     "url": "github:avgvstvs96/remark-sectionize"
   },
   "author": "Jake Low <hello@jakelow.com>",
-  "contributors": [
-    "Bassim Shahidy <bassim@shahidy.com>"
+  "contributors": ["Bassim Shahidy <bassim@shahidy.com> (https://github.com/avgvstvs96)",
+    "github:Dahmon (https://github.com/Dahmon)",
+    "github:nd0ut (https://github.com/nd0ut)",
+    "github:shogotsuneto (https://github.com/shogotsuneto)",
+    "github:CanRau (https://github.com/CanRau)"
   ],
   "license": "MIT",
   "private": false,
@@ -29,13 +32,13 @@
     "section"
   ],
   "dependencies": {
-    "@types/dedent": "^0.7.2",
-    "@types/tape": "^5.6.4",
-    "ts-node": "^10.9.2",
     "unist-util-find-after": "^4.0.1",
     "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
+    "ts-node": "^10.9.2",
+    "@types/dedent": "^0.7.2",
+    "@types/tape": "^5.6.4",
     "@types/unist": "^3.0.2",
     "dedent": "^0.7.0",
     "remark": "^14.0.3",
