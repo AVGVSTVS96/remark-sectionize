@@ -1,74 +1,71 @@
-import { findAfter } from 'unist-util-find-after'
-import { visit } from 'unist-util-visit';
-import type { Node, Parent } from 'unist';
-import type { Transformer } from 'unified'
+import { findAfter } from "unist-util-find-after";
+import { visit, type BuildVisitor } from "unist-util-visit";
+import type { Node, Parent } from "unist";
+import type { Transformer } from "unified";
 
+const MAX_HEADING_DEPTH = 6;
 
-const MAX_HEADING_DEPTH = 6
-
-function plugin(): Transformer<GenericNode, GenericNode> {
-  return transform
+interface HeadingNode extends Node {
+  type: "heading";
+  depth: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
-interface GenericNode extends Node {
-  type: string;
-  depth?: number;
-  children?: GenericNode[];
-  data?: {
-    hName?: string;
-    [key: string]: unknown;
+interface SectionNode extends Parent {
+  type: "section";
+  depth: number;
+  data: {
+    hName: "section";
   };
 }
 
-interface HeadingNode extends GenericNode {
-  type: 'heading';
-  depth: number;
+type GenericNode = Node | HeadingNode | SectionNode;
+
+function plugin(): Transformer<GenericNode, GenericNode> {
+  return transform;
 }
+type Test = (node: GenericNode) => boolean;
 
-type FindAfterParent = Parent & {
-  children: GenericNode[];
-  data?: { [key: string]: unknown };
-}
-
-type Test = (node: GenericNode) => boolean
-
-function transform(tree: GenericNode): void {
+function transform(tree: GenericNode): GenericNode {
   for (let depth = MAX_HEADING_DEPTH; depth > 0; depth--) {
     visit(
       tree,
-      (node: GenericNode): node is HeadingNode => 
-        node.type === 'heading' && typeof node.depth === 'number' && node.depth === depth,
-      (node, index, parent) => sectionize(node, index, parent as FindAfterParent)
-    )
+      (node): node is HeadingNode =>
+        node.type === "heading" &&
+        "depth" in node &&
+        typeof node.depth === "number" &&
+        node.depth === depth,
+      sectionize as unknown as BuildVisitor<GenericNode, Test>
+    );
   }
+  return tree;
 }
 
-// biome-ignore lint/suspicious/noConfusingVoidType: <I'm just happy I have no errors>
-function sectionize(node: HeadingNode, index: number, parent: FindAfterParent): void | boolean {
-  const start = node
-  const startIndex = index
-  const depth = start.depth
+function sectionize(node: HeadingNode, index: number, parent: Parent): void {
+  const start = node;
+  const startIndex = index;
+  const depth = start.depth;
 
-  const isEnd: Test = (node: GenericNode): boolean => 
-    (node.type === 'heading' && typeof node.depth === 'number' && node.depth <= depth) || node.type === 'export'
+  const isEnd = (node: GenericNode): boolean =>
+    (node.type === "heading" && "depth" in node && node.depth <= depth) ||
+    node.type === "export";
+  const end = findAfter(parent, start, isEnd);
+  const endIndex = end ? parent.children.indexOf(end) : parent.children.length;
 
-  const end = findAfter(parent, start, isEnd) as GenericNode | null
-  const endIndex = end ? parent.children.indexOf(end) : parent.children.length
   const between = parent.children.slice(
     startIndex,
     endIndex > 0 ? endIndex : undefined
-  )
+  );
 
-  const section: GenericNode = {
-    type: 'section',
+  const section: SectionNode = {
+    type: "section",
     depth: depth,
-    children: between as GenericNode[],
+    children: between,
     data: {
-      hName: 'section'
-    }
-  }
+      hName: "section",
+    },
+  };
 
-  parent.children.splice(startIndex, section?.children?.length ?? 0, section)
+  parent.children.splice(startIndex, section.children.length, section);
 }
 
-export default plugin
+export default plugin;
