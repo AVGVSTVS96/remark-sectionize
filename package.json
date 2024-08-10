@@ -22,8 +22,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "node test.js | npx tap-spec",
-    "test-ts": "tsc --noEmit remark-sectionize-test.ts"
+    "test": "tsup && node test.js | npx tap-spec"
   },
   "keywords": [
     "remark",
@@ -33,8 +32,8 @@
     "section"
   ],
   "resolutions": {
-  "@types/unist": "3.0.2"
-},
+    "@types/unist": "3.0.2"
+  },
   "dependencies": {
     "unist-util-find-after": "^4.0.1",
     "unist-util-visit": "^4.1.2"
@@ -47,7 +46,6 @@
     "dedent": "^0.7.0",
     "remark": "^14.0.3",
     "tape": "^5.6.3",
-    "ts-node": "^10.9.2",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4",
     "unist-builder": "^3.0.1",

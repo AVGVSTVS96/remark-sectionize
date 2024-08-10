@@ -1,5 +1,7 @@
 
-> This is a fork of Jake Low's [remark-sectionize](https://github.com/jake-low/remark-sectionize), modified by adding a remark-sectionize.d.ts file to get rid of the no type declaration file error in my Astro project. I've also added a test for the type declaration file.
+> This is an experimental fork of Jake Low's [remark-sectionize](https://github.com/jake-low/remark-sectionize), converted to TypeScript.
+
+
 # remark-sectionize
 
 This is a [remark](https://github.com/remarkjs/remark) plugin to wrap each
