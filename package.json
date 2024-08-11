@@ -1,20 +1,28 @@
 {
   "name": "@avgvstvs96/remark-sectionize",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Wrap content below each heading in a <section> element",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/avgvstvs96/remark-sectionize.git"
+    "url": "github:avgvstvs96/remark-sectionize"
   },
   "author": "Jake Low <hello@jakelow.com>",
+  "contributors": [
+    "Bassim Shahidy <bassim@shahidy.com> (https://github.com/avgvstvs96)",
+    "github:Dahmon (https://github.com/Dahmon)",
+    "github:nd0ut (https://github.com/nd0ut)",
+    "github:shogotsuneto (https://github.com/shogotsuneto)",
+    "github:CanRau (https://github.com/CanRau)"
+  ],
   "license": "MIT",
   "private": false,
   "type": "module",
   "scripts": {
-    "test": "node test.js | npx tap-spec",
-    "test-ts": "tsc --noEmit remark-sectionize-test.ts"
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "tsup && node test.js | npx tap-spec"
   },
   "keywords": [
     "remark",
@@ -23,17 +31,23 @@
     "html",
     "section"
   ],
+  "resolutions": {
+    "@types/unist": "3.0.2"
+  },
   "dependencies": {
-    "@types/dedent": "^0.7.2",
-    "@types/tape": "^5.6.4",
-    "ts-node": "^10.9.2",
     "unist-util-find-after": "^4.0.1",
     "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
+    "@types/dedent": "^0.7.2",
+    "@types/tape": "^5.6.4",
+    "@types/unist": "^3.0.2",
+    "biome": "^0.3.3",
     "dedent": "^0.7.0",
     "remark": "^14.0.3",
     "tape": "^5.6.3",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
     "unist-builder": "^3.0.1",
     "unist-util-remove-position": "^4.0.2"
   }
