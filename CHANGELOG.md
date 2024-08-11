@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.1] - 2024-08-10
+### Changed
+- Remove manually written index.d.ts file [PR #3](https://github.com/avgvstvs96/remark-sectionize/pull/3) by @AVGVSTVS96
+
 ## [2.1.0] - 2024-08-09
 ### Changed
 - Converted to TypeScript [PR #2](https://github.com/avgvstvs96/remark-sectionize/pull/2) by @AVGVSTVS96
