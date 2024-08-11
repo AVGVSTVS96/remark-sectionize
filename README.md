@@ -1,3 +1,7 @@
+
+> This is an experimental fork of Jake Low's [remark-sectionize](https://github.com/jake-low/remark-sectionize), converted to TypeScript.
+
+
 # remark-sectionize
 
 This is a [remark](https://github.com/remarkjs/remark) plugin to wrap each
