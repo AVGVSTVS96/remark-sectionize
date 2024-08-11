@@ -1,7 +1,7 @@
 {
 
   "name": "@avgvstvs96/remark-sectionize",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Wrap content below each heading in a <section> element",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
