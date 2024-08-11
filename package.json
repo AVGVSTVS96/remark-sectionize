@@ -1,7 +1,7 @@
 {
 
   "name": "@avgvstvs96/remark-sectionize",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Wrap content below each heading in a <section> element",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,13 +25,7 @@
     "dev": "tsup --watch",
     "test": "tsup && node test.js | npx tap-spec"
   },
-  "keywords": [
-    "remark",
-    "plugin",
-    "markdown",
-    "html",
-    "section"
-  ],
+  "keywords": ["remark", "plugin", "markdown", "html", "section"],
   "resolutions": {
     "@types/unist": "3.0.2"
   },
