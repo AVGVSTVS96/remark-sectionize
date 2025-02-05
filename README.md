@@ -1,5 +1,5 @@
 
-> This is an experimental fork of Jake Low's [remark-sectionize](https://github.com/jake-low/remark-sectionize), converted to TypeScript.
+> This is an experimental fork of Jake Low's [remark-sectionize](https://github.com/jake-low/remark-sectionize), converted to TypeScript as an exercise while I learn it. As of 11/18/24, the original project has added minimal types, which are more correct for a simple plugin like this that doesn't require strict type checking. Therefore, the original version of this package is recommended over this experimental fork.
 
 
 # remark-sectionize
