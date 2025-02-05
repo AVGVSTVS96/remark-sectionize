@@ -4,13 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.1.3 - 2024-02-05
+### Changed
+- Improve types, use more minimal and correct types by @AVGVSTVS96
+
+### Fixed
+- Add `unified` as a dev dependency because we use it's `Plugin` type by @AVGVSTVS96
+
 ## [2.1.2] - 2024-08-11
 ### Changed
-- Update package.json to publish only dist folder to NPM by @AVGVSTVS96
+- Update `package.json` to publish only dist folder to NPM by @AVGVSTVS96
 
 ## [2.1.1] - 2024-08-10
 ### Changed
-- Remove manually written index.d.ts file [PR #3](https://github.com/avgvstvs96/remark-sectionize/pull/3) by @AVGVSTVS96
+- Remove manually written `index.d.ts` file [PR #3](https://github.com/avgvstvs96/remark-sectionize/pull/3) by @AVGVSTVS96
 
 ## [2.1.0] - 2024-08-09
 ### Changed
